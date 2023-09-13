@@ -16,4 +16,4 @@ Open Platform Communications Unified Architecture (OPC UA) will be used to provi
 
 ## Consequences
 
-The only downside is OPC UA is niche protocol. Less open source libraries will support OPC UA. Fewer developers and engineers will know the protocol. More custom code will need to be written and less off the shelf support will be expected.
+The only downside is OPC UA is niche protocol. Less open source libraries will support OPC UA. Fewer developers and engineers will know the protocol. More custom code will need to be written and less off the shelf support will be expected. 
