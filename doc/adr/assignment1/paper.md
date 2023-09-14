@@ -1,7 +1,8 @@
-# CSCI 656
-## Assignment 1
-## Matthew Collins
-
+### CSCI 656
+### Assignment 1  
+### Matthew Collins
+### 09/13/23\
+### \
 ### 1) A one paragraph description, in your own words, of the problem that the architecture addresses
 The architecture described in the paper “Koziolek et al. - 2021 - Dynamic Updates of Virtual Programmable Logic Controllers (PLCs) Deployed as Kubernetes Microservices”, introduces a dynamic updating strategy for Virtual PLCs in K8s environments, leveraging a specialized K8s Operator. Their method permits seamless application updates without disrupting production. Notably, their tests indicate that this mechanism can transfer internal states of sizable control applications (with 100,000 state variables) utilizing just 15% of the available cycle slack time, opening doors for real-time updates and cloud-native migrations.
 
