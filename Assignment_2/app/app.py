@@ -8,7 +8,7 @@ from werkzeug.exceptions import abort
 def get_db_connection():
     try:
         conn = mysql.connect(
-            host="db",
+            host="assignment2FlaskDB",
             user="flask",
             password="password",
             database="flask")
@@ -37,7 +37,7 @@ def get_post(post_id):
 
 
 app = Flask(__name__)
-# app.config['SECRET_KEY'] = 'your secret key'
+app.config['SECRET_KEY'] = 'supersecretkey'
 
 
 @app.route('/')

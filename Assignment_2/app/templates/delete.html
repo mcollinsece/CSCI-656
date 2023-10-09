@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Post</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete "{{ post.title }}"?</h1>
+    <form action="{{ url_for('delete', id=post.id) }}" method="post">
+        <input type="submit" value="Confirm Delete">
+    </form>
+    <a href="{{ url_for('index') }}">Cancel and go back to Posts List</a>
+</body>
+</html>

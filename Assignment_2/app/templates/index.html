@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posts List</title>
+</head>
+<body>
+    <h1>Welcome to the Posts Page</h1>
+
+    <!-- Flash messages display -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flash-messages">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <a href="{{ url_for('create') }}">Create a new post</a>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a>
+            <a href="{{ url_for('edit', id=post.id) }}">Edit</a>
+            <form action="{{ url_for('delete', id=post.id) }}" method="post">
+                <input type="submit" value="Delete">
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
