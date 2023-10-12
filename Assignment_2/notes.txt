@@ -1,0 +1,19 @@
+hostnamectl
+firewalld
+curl -sfL https://get.k3s.io | K3S_URL=https://192.168.0.100:6443 K3S_TOKEN=K1050aa1e0858d3e8fee1cf634192849bcd32c3a274cfa9783232e0b57726f7e5b4::server:be6fd3b78c0eb544e1994a4722a3cf7e sh -
+
+docker build -t assignment2sqlinit:latest .
+docker build -t assignment2flaskapp:latest .
+docker run --name assignment2FlaskDB --network assignment2FlaskNetwork -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 -d mysql:latest
+docker run --name assignment2sqlinit --network assignment2FlaskNetwork -d assignment2sqlinit
+docker run --name assignment2FlaskApp --network assignment2FlaskNetwork -d -p 8081:8081 assignment2flaskapp:latest
+https://www.linuxbuzz.com/install-k3s-kubernetes-cluster-on-ubuntu/
+https://docs.k3s.io/quick-start
+https://gitlab.com/cloud-versity/rancher-k3s-first-steps#important-note-for-aws-azure-gcp
+assignment2FlaskDB
+
+https://medium.com/@satyakommula/deploy-kubernetes-dashboard-with-nodeport-382f447d2ff8
+Dashboard Token:
+eyJhbGciOiJSUzI1NiIsImtpZCI6ImJycWVIOVo5NnVSUW1fdXpsX1BGMG1HX3ZqelEwam1zSHJMT05JTktsTEUifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJrM3MiXSwiZXhwIjoxNjk2ODgwMzQyLCJpYXQiOjE2OTY4NzY3NDIsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJhZG1pbi11c2VyIiwidWlkIjoiZmZlOTBmOTctZWUzNC00OTdhLTgxZTktZDZiNzgwNjRkM2QxIn19LCJuYmYiOjE2OTY4NzY3NDIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlcm5ldGVzLWRhc2hib2FyZDphZG1pbi11c2VyIn0.b9gxywc4wBKeSBb186BkLcpYFJ1evTnxuIKbJmHi8WT1CqsevBgR0zIPz-OSzI9B8pwyliKruBTnAk5UW6js_EdIh7V4wtGiwLOGiG0aZiNCZd4jbQLsy4Wo4UMPcUVyEsKlncE4_qWnHQquQCMT1Xf1yZl3mc0kgmQKg7Nq9JEf2WaH-YuYexlCrSlZzZcZS7Jb9DYcucttELOc3XlbVQeULzIi3fZ7sUhb8BMTCDlpEjrExtZ1GIlJD1JWp-1eBjmwA7VoiAEGhsDH0fYZ8jFDvr2tJukarRb1dpYOaDZucZ7PjAMjpjYB3X7GT2q2JiWydjhFjgIsms97lte5Fw
+
+
