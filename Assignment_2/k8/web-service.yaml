@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: assignment2flaskapp
+  namespace: assignment2  # specify the namespace
+spec:
+  type: NodePort  # this will expose the service outside of the cluster
+  ports:
+  - port: 8081
+    nodePort: 30081  # Optional: Specify a port or let Kubernetes assign one
+  selector:
+    app: assignment2flaskapp
+
