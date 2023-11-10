@@ -1,0 +1,20 @@
+GET http://localhost:8080/hello
+
+###
+
+POST http://localhost:8080/ HTTP/1.1
+content-type: application/json
+
+{
+    "id": "foo",
+    "name": "Mr. Foo",
+    "phone": "123-123-1234"
+}
+
+###
+
+GET http://localhost:8080/foo
+
+###
+
+GET http://localhost:8080/v2/api-docs
