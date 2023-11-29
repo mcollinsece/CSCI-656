@@ -1,0 +1,12 @@
+CREATE DATABASE mydb;
+
+\c mydb
+
+CREATE TABLE my_table (
+    id SERIAL PRIMARY KEY,
+    user_name VARCHAR(255),
+    casted_vote VARCHAR(255) 
+);
+
+SELECT * FROM my_table;
+
