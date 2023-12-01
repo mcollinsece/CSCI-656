@@ -1,0 +1,31 @@
+GET http://localhost:8080/hello
+
+###
+
+POST http://localhost:8080/api/auth/signup HTTP/1.1
+content-type: application/json
+
+{
+    "username": "mod",
+    "email": "mcollin4@citadel.edu",
+    "password": "12345678",
+    "role": ["mod", "user"]
+}
+
+###
+GET http://localhost:8080/api/test/all
+
+###
+
+POST http://localhost:8080/api/auth/signin HTTP/1.1
+content-type: application/json
+
+{
+    "username": "mod",
+    "password": "12345678"
+}
+
+###
+GET http://localhost:8080/api/test/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2QiLCJpYXQiOjE3MDEzMDIyNTEsImV4cCI6MTcwMTM4ODY1MX0.nNf8Yo-ZrNHkgUgfe9RKTinLD-iS9uew9IXFVeFNcD8
+
