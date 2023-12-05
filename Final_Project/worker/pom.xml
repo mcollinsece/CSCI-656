@@ -41,7 +41,16 @@
     <build>
         <pluginManagement>
             <plugins>
-                <!-- Plugin configurations -->
+                <plugin>
+                    <groupId>com.google.cloud.tools</groupId>
+                    <artifactId>jib-maven-plugin</artifactId>
+                    <version>3.4.0</version>
+                    <configuration>
+                    <to>
+                        <image>docker.io/matthewcollinsece/vote-app-worker</image>
+                    </to>
+                    </configuration>
+                </plugin>	
             </plugins>
         </pluginManagement>
     </build>

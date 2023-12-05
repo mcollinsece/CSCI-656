@@ -1,0 +1,3 @@
+com\worker\voteapp\RedisConnector.class
+com\worker\voteapp\PostgresConnector.class
+com\worker\voteapp\RedisToPostgresApp.class

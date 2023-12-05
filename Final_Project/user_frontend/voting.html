@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voting Page</title>
+</head>
+<body>
+    <h1>Voting Page</h1>
+    <button id="voteGiantDouche">Vote for Giant Douche</button>
+    <button id="voteTurdSandwich">Vote for Turd Sandwich</button>
+
+    <script>
+        function vote(candidate) {
+            const username = localStorage.getItem('username');
+            const token = localStorage.getItem('bearerToken');
+            
+            fetch(`http://localhost:8081/writeToRedis?key=${username}&value=${candidate}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(response => {
+                if(response.ok) {
+                    alert(`Voted for ${candidate}`);
+                } else {
+                    alert('Failed to cast vote');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        document.getElementById('voteGiantDouche').addEventListener('click', () => vote('giantdouche'));
+        document.getElementById('voteTurdSandwich').addEventListener('click', () => vote('turdsandwich'));
+    </script>
+</body>
+</html>

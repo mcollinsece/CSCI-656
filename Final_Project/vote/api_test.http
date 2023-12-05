@@ -20,9 +20,9 @@ GET http://localhost:8080/foo
 GET http://localhost:8080/v2/api-docs
 
 ###
-
-GET http://localhost:8080/writeToRedis?key=ab12&value=Hello%20World04
-
+   
+GET http://localhost:8081/writeToRedis?key=ab16&value=Hello%20World04
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2QiLCJpYXQiOjE3MDE1NjU2NTksImV4cCI6MTcwMTY1MjA1OX0.f_uNUxmf9bYv9pZnY9xtAbwpWRk6erPb1fIZE8Ho5ck
 ###
 
 GET http://localhost:8080/writeToRedis?key=ab13&value=Hello%20World04

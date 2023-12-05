@@ -27,5 +27,14 @@ content-type: application/json
 
 ###
 GET http://localhost:8080/api/test/user
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2QiLCJpYXQiOjE3MDEzMDIyNTEsImV4cCI6MTcwMTM4ODY1MX0.nNf8Yo-ZrNHkgUgfe9RKTinLD-iS9uew9IXFVeFNcD8
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2QiLCJpYXQiOjE3MDE1NTc2NTAsImV4cCI6MTcwMTY0NDA1MH0.qaoOpnUqSj9SoywfFxpdyIYl_O-ocuofRu5R4JOcwsg
+
+ 
+###
+GET http://localhost:8080/api/test/mod
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2QiLCJpYXQiOjE3MDEzMDQ2NzgsImV4cCI6MTcwMTM5MTA3OH0.s5jiHoClBbObGyq_vHTvqzPhfnmIb3rGMivsjTLtV0c
+
+###
+GET http://localhost:8080/api/test/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2QiLCJpYXQiOjE3MDEzMDIzNTIsImV4cCI6MTcwMTM4ODc1Mn0.TgN-4eaNLRr94cR5ZBYTE6yXZ6Z_PlFiFynmYl7M38Q
 
