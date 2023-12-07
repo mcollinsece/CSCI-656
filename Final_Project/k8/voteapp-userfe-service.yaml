@@ -3,9 +3,11 @@ kind: Service
 metadata:
   name: voteapp-user-fe-service
 spec:
+  type: NodePort
   selector:
     app: voteapp-user-fe
   ports:
     - protocol: TCP
       port: 81
+      nodePort: 30081  # You can specify a nodePort here or leave it out to have Kubernetes assign one automatically.
       targetPort: 81
