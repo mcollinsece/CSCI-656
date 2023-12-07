@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: voteapp-admin-fe-service
+  namespace: voteapp
 spec:
   selector:
     app: voteapp-admin-fe

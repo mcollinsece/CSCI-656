@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: voteapp-login-service
+  namespace: voteapp
 spec:
   selector:
     app: voteapp-login
