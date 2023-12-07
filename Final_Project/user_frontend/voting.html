@@ -14,7 +14,7 @@
             const username = localStorage.getItem('username');
             const token = localStorage.getItem('bearerToken');
             
-            fetch(`http://localhost:8081/writeToRedis?key=${username}&value=${candidate}`, {
+            fetch(`/writeToRedis?key=${username}&value=${candidate}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`

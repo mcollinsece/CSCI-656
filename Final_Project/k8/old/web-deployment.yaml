@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assignment2flaskapp
+  namespace: assignment2  # specify the namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assignment2flaskapp
+  template:
+    metadata:
+      labels:
+        app: assignment2flaskapp
+    spec:
+      containers:
+      - name: assignment2flaskapp
+        image: quay.io/collins_matthew3/csci656_assignment2/assignment2flaskapp:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8081
+

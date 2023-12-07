@@ -7,4 +7,3 @@ public class RedisConnector {
         return new Jedis("voteapp-redis", 6379); // Replace with your Redis host and port
     }
 }
-

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: voteapp-user-front-end-service
+spec:
+  selector:
+    app: voteapp-user-front-end
+  ports:
+    - protocol: TCP
+      port: 81
+      targetPort: 81

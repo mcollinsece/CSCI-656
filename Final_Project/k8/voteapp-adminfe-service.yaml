@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: voteapp-admin-fe-service
+spec:
+  selector:
+    app: voteapp-admin-fe
+  ports:
+    - protocol: TCP
+      port: 81
+      targetPort: 81
