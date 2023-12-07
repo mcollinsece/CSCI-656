@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voteapp-lb
+  namespace: voteapp
+  labels:
+    app: voteapp-lb
+spec:
+  replicas: 3  # You can change the number of replicas
+  selector:
+    matchLabels:
+      app: voteapp-lb
+  template:
+    metadata:
+      labels:
+        app: voteapp-lb
+    spec:
+      containers:
+      - name: voteapp-lb
+        image: matthewcollinsece/voteapp-lb
+        ports:
+        - containerPort: 80

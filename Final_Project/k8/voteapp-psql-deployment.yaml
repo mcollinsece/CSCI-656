@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voteapp-psql
+  namespace: voteapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: voteapp-psql
+  template:
+    metadata:
+      labels:
+        app: voteapp-psql
+    spec:
+      containers:
+      - name: voteapp-psql
+        image: matthewcollinsece/voteapp-psql
+        ports:
+        - containerPort: 5432

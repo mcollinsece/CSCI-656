@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voteapp-admin-fe
+  namespace: voteapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: voteapp-admin-fe
+  template:
+    metadata:
+      labels:
+        app: voteapp-admin-fe
+    spec:
+      containers:
+      - name: voteapp-user-fe
+        image: matthewcollinsece/voteapp-admin-front-end
+        ports:
+        - containerPort: 82
