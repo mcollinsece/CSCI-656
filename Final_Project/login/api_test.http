@@ -3,14 +3,13 @@ GET http://localhost:8080/hello
 ###
 
 POST http://localhost:8080/api/auth/signup HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2QiLCJpYXQiOjE3MDE1NTc2NTAsImV4cCI6MTcwMTY0NDA1MH0.qaoOpnUqSj9SoywfFxpdyIYl_O-ocuofRu5R4JOcwsg
 content-type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2QiLCJpYXQiOjE3MDE5NjA2NDQsImV4cCI6MTcwMjA0NzA0NH0.tFZzP8kwVpXWZNHJAWp6T1DDu5YJaawvTR0w3kcInmw
 {
-    "username": "mod",
+    "username": "admin",
     "email": "mcollin4@citadel.edu",
     "password": "12345678",
-    "role": ["mod"]
+    "role": ["user", "mod", "admin"]
 }
 
 ###

@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  psqldb:
+    image: matthewcollinsece/voteapp-psql
+    container_name: psqldb
+    ports:
+      - "5432:5432"
+    networks:
+      - voteapp
+
+  voteapp-redis:
+    image: matthewcollinsece/voteapp-redis
+    container_name: voteapp-redis
+    ports:
+      - "6379:6379"
+    depends_on:
+      - psqldb
+    networks:
+      - voteapp
+
+  voteapp-login:
+    image: matthewcollinsece/vote-app-login
+    container_name: voteapp-login
+    ports:
+      - "8080:8080"
+    depends_on:
+      - psqldb
+    networks:
+      - voteapp
+
+  voteapp-vote:
+    image: matthewcollinsece/vote-app-vote
+    container_name: voteapp-vote
+    ports:
+      - "8081:8081"
+    depends_on:
+      - psqldb
+    networks:
+      - voteapp
+
+  voteapp-user-front-end:
+    image: matthewcollinsece/voteapp-user-front-end
+    container_name: voteapp-user-fe
+    ports:
+      - "81:81"
+    depends_on:
+      - psqldb
+    networks:
+      - voteapp
+
+  voteapp-lb:
+    image: matthewcollinsece/voteapp-lb
+    container_name: voteapp-lb
+    ports:
+      - "80:80"
+    depends_on:
+      - psqldb
+    networks:
+      - voteapp
+
+  vote-app-worker:
+    image: matthewcollinsece/vote-app-worker
+    container_name: voteapp-worker
+    depends_on:
+      - psqldb
+    networks:
+      - voteapp
+
+networks:
+  voteapp:
